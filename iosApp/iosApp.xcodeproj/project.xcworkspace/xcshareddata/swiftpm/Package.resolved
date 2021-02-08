@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Longinus",
+        "repositoryURL": "https://github.com/KittenYang/Longinus.git",
+        "state": {
+          "branch": null,
+          "revision": "dcf1f9308424908bd52b57426faad03a98ceb48c",
+          "version": "1.1.16"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
