@@ -12,10 +12,11 @@ import Longinus
 
 class MovieDetailViewController: UIViewController {
 
-    @IBOutlet var posterImageView: UIImageView!
-    @IBOutlet var titleLabel: UILabel!
-    @IBOutlet var ratingLabel: UILabel!
-    @IBOutlet var overviewLabel: UILabel!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var posterImageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var ratingLabel: UILabel!
+    @IBOutlet weak var overviewLabel: UILabel!
     
     var movieId: Int32 = 0
     
@@ -32,8 +33,10 @@ class MovieDetailViewController: UIViewController {
         movieApiClient.fetchMovieDetail(movieId: movieId) { (movie, error) in
             if let movie = movie {
                 self.setMovieInfo(movie: movie)
+                self.activityIndicator.isHidden = true
             } else {
                 print(error?.localizedDescription ?? "error")
+                self.activityIndicator.isHidden = true
             }
         }
     }

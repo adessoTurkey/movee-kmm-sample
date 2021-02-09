@@ -12,6 +12,7 @@ import Longinus
 
 class MovieListViewController: UIViewController {
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet var movieTableView: UITableView!
     
     private var movies: [MovieModel] = []
@@ -30,8 +31,10 @@ class MovieListViewController: UIViewController {
             if let movies = popularMovies?.results {
                 self.movies = movies
                 self.movieTableView.reloadData()
+                self.activityIndicator.isHidden = true
             } else {
                 print(error?.localizedDescription ?? "error")
+                self.activityIndicator.isHidden = true
             }
         }
     }

@@ -115,6 +115,9 @@
                                     <outlet property="delegate" destination="Hpx-d2-iIG" id="Kap-bv-rNA"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="lch-PH-c6x">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="YrT-px-793"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -122,17 +125,20 @@
                             <constraint firstItem="B0V-9e-XPk" firstAttribute="leading" secondItem="YrT-px-793" secondAttribute="leading" id="CWv-vv-jcl"/>
                             <constraint firstItem="B0V-9e-XPk" firstAttribute="top" secondItem="YrT-px-793" secondAttribute="top" id="JiJ-fQ-S7i"/>
                             <constraint firstItem="B0V-9e-XPk" firstAttribute="trailing" secondItem="YrT-px-793" secondAttribute="trailing" id="Lum-4s-Fyx"/>
+                            <constraint firstItem="lch-PH-c6x" firstAttribute="centerX" secondItem="hSO-jq-q8E" secondAttribute="centerX" id="NC9-TO-KnG"/>
+                            <constraint firstItem="lch-PH-c6x" firstAttribute="centerY" secondItem="hSO-jq-q8E" secondAttribute="centerY" id="jU6-FA-XQR"/>
                             <constraint firstItem="B0V-9e-XPk" firstAttribute="bottom" secondItem="YrT-px-793" secondAttribute="bottom" id="olW-nF-H9Y"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="U8Y-ni-HLN"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="lch-PH-c6x" id="49O-1P-ibQ"/>
                         <outlet property="movieTableView" destination="B0V-9e-XPk" id="p7p-NP-UDr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rbm-ac-4lP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-565.21739130434787" y="28.794642857142854"/>
+            <point key="canvasLocation" x="-562" y="29"/>
         </scene>
         <!--Movie Detail View Controller-->
         <scene sceneID="NXO-u9-Xga">
@@ -142,9 +148,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="JYf-z0-zmr">
-                                <rect key="frame" x="197" y="465" width="20" height="20"/>
-                            </activityIndicatorView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f60-XI-gCF">
                                 <rect key="frame" x="0.0" y="96" width="414" height="800"/>
                                 <subviews>
@@ -215,21 +218,25 @@
                                 <viewLayoutGuide key="contentLayoutGuide" id="Cjw-23-WfF"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="pes-8Q-wML"/>
                             </scrollView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="bfV-gB-gW2">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fcm-fe-cjC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="JYf-z0-zmr" firstAttribute="centerY" secondItem="fcm-fe-cjC" secondAttribute="centerY" id="Ktd-nW-WJN"/>
-                            <constraint firstItem="JYf-z0-zmr" firstAttribute="centerX" secondItem="fcm-fe-cjC" secondAttribute="centerX" id="Svu-9n-QZc"/>
+                            <constraint firstItem="bfV-gB-gW2" firstAttribute="centerX" secondItem="XP6-hO-3md" secondAttribute="centerX" id="TV9-Um-1y4"/>
                             <constraint firstAttribute="bottom" secondItem="f60-XI-gCF" secondAttribute="bottom" id="WfC-wB-4Vb"/>
                             <constraint firstItem="f60-XI-gCF" firstAttribute="top" secondItem="fcm-fe-cjC" secondAttribute="top" constant="8" id="bWg-FE-Ack"/>
                             <constraint firstItem="fcm-fe-cjC" firstAttribute="trailing" secondItem="f60-XI-gCF" secondAttribute="trailing" id="iVg-I3-99S"/>
+                            <constraint firstItem="bfV-gB-gW2" firstAttribute="centerY" secondItem="XP6-hO-3md" secondAttribute="centerY" id="ylI-UM-FSW"/>
                             <constraint firstItem="f60-XI-gCF" firstAttribute="leading" secondItem="fcm-fe-cjC" secondAttribute="leading" id="ymL-VY-3Nd"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <navigationItem key="navigationItem" id="Rdd-ze-iil"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="bfV-gB-gW2" id="O7a-BO-iBM"/>
                         <outlet property="overviewLabel" destination="IoQ-il-KI2" id="mis-ma-YzO"/>
                         <outlet property="posterImageView" destination="IUU-90-G3R" id="WFr-dY-HDj"/>
                         <outlet property="ratingLabel" destination="hSQ-zg-y7s" id="uYs-ef-sZ8"/>
